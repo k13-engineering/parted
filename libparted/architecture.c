@@ -19,7 +19,7 @@
 #include <config.h>
 #include "architecture.h"
 
-const PedArchitecture* ped_architecture;
+const PedArchitecture* ped_architecture = NULL;
 
 void
 ped_set_architecture ()
