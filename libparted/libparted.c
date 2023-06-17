@@ -169,8 +169,6 @@ done_disk_types ()
 	ped_disk_atari_done ();
 }
 
-static void _init() __attribute__ ((constructor));
-
 static void
 _init()
 {
@@ -184,6 +182,10 @@ _init()
 #ifdef DEBUG
 	memset (dodgy_memory_active, 0, sizeof (dodgy_memory_active));
 #endif
+}
+
+void libparted_init() {
+	_init();
 }
 
 extern void ped_file_system_nilfs2_done (void);

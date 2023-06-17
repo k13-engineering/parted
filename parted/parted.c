@@ -2674,12 +2674,16 @@ _done_messages ();
 done_ui();
 }
 
+extern void libparted_init();
+
 int
 main (int argc, char** argv)
 {
         PedDevice*      dev;
 	PedDisk*        diskp = 0;
         int             status;
+
+        libparted_init();
 
         set_program_name (argv[0]);
         atexit (close_stdout);
