@@ -554,6 +554,9 @@ ped_unit_parse_custom (const char* str, const PedDevice* dev, PedUnit unit,
 	}
 
 	*sector = num * unit_size / dev->sector_size;
+
+	fprintf(stderr, "num: %lf, unit_size: %lld, dev->sector_size: %d, *sector: %lld\n", num, unit_size, dev->sector_size, *sector);
+
 	/* negative numbers count from the end */
 	if (copy[0] == '-')
 		*sector += dev->length;
